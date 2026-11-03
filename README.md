@@ -5,18 +5,21 @@ Stack: **HTML + CSS plano** (sin frameworks). Un solo archivo: `index.html`.
 
 ---
 
-## 1. Qué falta editar antes de publicar
+## 1. Estado del sitio
 
-Busca en `index.html` los comentarios `<!-- PLACEHOLDER ... -->`:
+**Implementado:** hero con foto + chips flotantes, barra de capacidades, servicios,
+proceso, portafolio (Richard Ferro + Bámbola) y contacto. Diseño premium con
+gradientes, glass y animaciones de scroll.
+
+**Pendientes (opcionales):**
 
 | # | Qué | Dónde |
 |---|---|---|
-| 1 | **Barra de capacidades** (ajústala a lo que realmente ofreces) | bloque `.trust` |
-| 2 | **3 trabajos reales** (reemplazar las tarjetas "por publicar") | sección `#trabajos` |
-| 3 | **Correo** de esta línea | sección `#contacto` (`carlos@carlosfalcon.dev`) |
-| 4 | **RUC / razón social** (opcional, da formalidad) | `footer` |
+| 1 | **Correo** — crear buzón `carlos@carlosfalcon.dev` en Zoho | Zoho + DNS |
+| 2 | **RUC / razón social** (da formalidad) | `footer` en `index.html` |
+| 3 | **`www.carlosfalcon.dev`** — Add Domain + redirect | Cloudflare |
 
-También revisa que el **WhatsApp** (`51926644490`) sea el número correcto para esta línea.
+Confirma que el **WhatsApp** (`51926644490`) sea el número correcto para esta línea.
 
 ---
 
