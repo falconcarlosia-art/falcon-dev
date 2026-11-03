@@ -1,74 +1,35 @@
-# carlosfalcon.dev — One-pager personal
+# carlosfalcon.dev
 
-Sitio de una sola página para la línea de **desarrollo web para PyMEs**.
-Stack: **HTML + CSS plano** (sin frameworks). Un solo archivo: `index.html`.
+Landing comercial de Carlos Falcón para desarrollo web, e-commerce, rediseño y automatización. HTML, CSS y JavaScript nativos, sin compilación.
 
----
+## Contenido
+- `index.html`: sitio, metadatos, estilos y comportamiento.
+- `carlos.jpg`: retrato suministrado por Carlos, con logo del fondo eliminado.
+- `trabajos/`: capturas de Richard Ferro y Bámbola.
+- `tests/site.cjs`: pruebas estáticas y del formulario con entorno simulado.
 
-## 1. Estado del sitio
+## Pruebas
 
-**Implementado:** hero con foto + chips flotantes, barra de capacidades, servicios,
-proceso, portafolio (Richard Ferro + Bámbola) y contacto. Diseño premium con
-gradientes, glass y animaciones de scroll.
-
-**Pendientes (opcionales):**
-
-| # | Qué | Dónde |
-|---|---|---|
-| 1 | **Correo** — crear buzón `carlos@carlosfalcon.dev` en Zoho | Zoho + DNS |
-| 2 | **RUC / razón social** (da formalidad) | `footer` en `index.html` |
-| 3 | **`www.carlosfalcon.dev`** — Add Domain + redirect | Cloudflare |
-
-Confirma que el **WhatsApp** (`51926644490`) sea el número correcto para esta línea.
-
----
-
-## 2. Publicar en Cloudflare Pages
-
-### Opción A — Direct Upload (la más rápida, sin git)
-
-```bash
-cd ~/carlosfalcon-dev
-npx wrangler pages deploy . --project-name=carlosfalcon-dev
+```sh
+node tests/site.cjs
+git diff --check
 ```
 
-La primera vez te pedirá iniciar sesión en Cloudflare (abre el navegador).
-Al terminar te da una URL `*.pages.dev`. Luego conectas el dominio propio.
+Las pruebas del formulario verifican composición y codificación del mensaje sin enviar mensajes ni abrir WhatsApp.
 
-### Opción B — Conectar un repositorio Git
+## Flujo comercial
 
-1. Sube esta carpeta a un repo de GitHub.
-2. Cloudflare → **Workers & Pages** → **Create** → **Pages** → *Connect to Git*.
-3. Selecciona el repo.
-4. **Build command:** (déjalo vacío) — **Build output directory:** `/`
-5. Deploy.
+Portafolio al inicio, cuatro servicios diferenciados, enfoque de trabajo, proceso, preguntas frecuentes y formulario que prepara un mensaje de WhatsApp. No hay almacenamiento de leads ni backend. El usuario confirma el envío dentro de WhatsApp.
 
----
+No publicar precios, resultados comerciales, puntuaciones de rendimiento, testimonios o condiciones de soporte sin validarlos con Carlos. Los ejemplos de clientes muestran proyectos realizados, no atribuyen sus ventas o reseñas al trabajo de desarrollo.
 
-## 3. Conectar el dominio `carlosfalcon.dev`
+## Despliegue
 
-1. Cloudflare → **Workers & Pages** → tu proyecto → **Custom domains**.
-2. **Set up a custom domain** → escribe `carlosfalcon.dev` → Add.
-3. Como el dominio ya está en tu cuenta, Cloudflare crea los registros DNS solo.
-4. Repite con `www.carlosfalcon.dev` si lo quieres.
-5. SSL es automático.
+Repositorio: https://github.com/falconcarlosia-art/falcon-dev
+Dominio: https://carlosfalcon.dev
 
----
+El sitio tiene una integración Git con Cloudflare; los cambios en main han activado el despliegue en el proyecto falcon-dev. Verificar el contenido público después de cada publicación. Conservar la configuración existente del Worker/activos estáticos; no sustituirla por un proyecto Pages nuevo.
 
-## 4. Correo (opcional)
+## Verificación visual
 
-Si quieres `carlos@carlosfalcon.dev`:
-
-1. Zoho Mail → añade el dominio (misma cuenta que falcem/falcons) → crea el buzón.
-2. Copia los **MX** que te da Zoho a Cloudflare → DNS.
-3. Añade **SPF**, **DKIM** y **DMARC** (crítico si luego harás envíos).
-
----
-
-## 5. Prueba local
-
-```bash
-cd ~/carlosfalcon-dev
-python -m http.server 8080
-# abre http://localhost:8080
-```
+Se comprobó la disposición en escritorio y una vista móvil de 390px. Se probaron anchos de iframe de 320, 390, 768 y 1440px sin desbordamiento horizontal; apertura del menú, Escape, selección del servicio y anclas internas. Esto no sustituye una prueba en dispositivos físicos ni una auditoría Lighthouse.
