@@ -64,6 +64,9 @@
 
     /* HERO */
     .hero{padding:96px 0 72px}
+    .hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:52px;align-items:center}
+    .hero-photo img{width:100%;max-width:360px;aspect-ratio:1/1;object-fit:cover;border-radius:24px;border:1px solid var(--line);display:block;margin-left:auto;box-shadow:0 24px 60px -20px rgba(56,189,248,.35)}
+    @media(max-width:820px){.hero .wrap{grid-template-columns:1fr;gap:36px}.hero-photo img{max-width:250px;margin:0 auto}}
     .hero h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:900;letter-spacing:-.03em;line-height:1.08;margin-bottom:22px}
     .hero h1 em{font-style:normal;color:var(--accent)}
     .hero p.lead{font-size:1.15rem;margin-bottom:34px}
@@ -145,16 +148,21 @@
 
   <header class="hero">
     <div class="wrap">
-      <p class="eyebrow">Desarrollo web · Lima, Perú</p>
-      <h1>Tu negocio en internet,<br><em>funcionando de verdad.</em></h1>
-      <p class="lead">
-        Diseño y desarrollo páginas web, tiendas online y automatizaciones para pequeños
-        y medianos negocios. Trato directo, sin intermediarios, con precio claro y
-        entregas rápidas.
-      </p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="https://wa.me/51926644490?text=Hola%20Carlos%2C%20quiero%20una%20web%20para%20mi%20negocio" target="_blank" rel="noopener">💬 Escríbeme por WhatsApp</a>
-        <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+      <div class="hero-text">
+        <p class="eyebrow">Desarrollo web · Lima, Perú</p>
+        <h1>Tu negocio en internet,<br><em>funcionando de verdad.</em></h1>
+        <p class="lead">
+          Diseño y desarrollo páginas web, tiendas online y automatizaciones para pequeños
+          y medianos negocios. Trato directo, sin intermediarios, con precio claro y
+          entregas rápidas.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://wa.me/51926644490?text=Hola%20Carlos%2C%20quiero%20una%20web%20para%20mi%20negocio" target="_blank" rel="noopener">💬 Escríbeme por WhatsApp</a>
+          <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="carlos.jpg" alt="Carlos Falcón — desarrollo web para negocios" width="400" height="400" />
       </div>
     </div>
   </header>
